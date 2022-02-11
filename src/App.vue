@@ -1,5 +1,5 @@
 <template>
-  <Todo msg="Hello Vue 3 + TypeScript + Vite" />
+  <Todo />
 </template>
 
 <script setup lang="ts">

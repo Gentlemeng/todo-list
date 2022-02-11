@@ -1,21 +1,24 @@
 <template>
   <div class="todo-list">
     <todoItem
-      v-for="item in todoItems"
-      :key="item.id"
-      :value='item.name'
+      v-for="todo in todos"
+      :key="todo.id"
+      :todo="todo"
+      v-bind="$attrs"
     />
   </div>
 </template>
 
 <script setup lang="ts">
-import { ref } from 'vue'
+// https://dexie.org/
 import todoItem from './todo-item.vue'
-let todoItems = ref([
-  { id: '1', name: '121'}
-])
+defineProps({
+  todos: Array,
+})
 </script>
 
 <style scoped>
-
+.todo-list {
+  margin-top: 12px;
+}
 </style>
